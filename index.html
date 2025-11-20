@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clima Premium</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="search-box">
+            <i class="fa-solid fa-location-dot"></i>
+            <input type="text" id="city-input" placeholder="Ingresa una ciudad...">
+            <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+
+        <div class="weather-box" id="weather-box">
+            <div class="box-header">
+                <div class="location">
+                    <i class="fa-solid fa-map-pin"></i>
+                    <span id="city-name">--</span>
+                    <span id="country-code" class="country"></span>
+                </div>
+            </div>
+
+            <div class="weather-info">
+                <img src="" alt="weather icon" id="weather-icon" class="weather-icon">
+                <div class="temp-box">
+                    <span class="temperature" id="temperature">0</span>
+                    <span class="unit">°C</span>
+                </div>
+                <p class="description" id="description">--</p>
+            </div>
+
+            <div class="weather-details">
+                <div class="detail">
+                    <i class="fa-solid fa-water"></i>
+                    <div class="text">
+                        <span id="humidity">0%</span>
+                        <p>Humedad</p>
+                    </div>
+                </div>
+                <div class="detail">
+                    <i class="fa-solid fa-wind"></i>
+                    <div class="text">
+                        <span id="wind-speed">0 km/h</span>
+                        <p>Viento</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="not-found" id="not-found">
+            <div class="box">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <p>Ciudad no encontrada</p>
+            </div>
+        </div>
+
+        <div class="loader" id="loader"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

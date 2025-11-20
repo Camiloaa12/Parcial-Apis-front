@@ -1,0 +1,238 @@
+:root {
+    --primary-color: #ffffff;
+    --text-color: #333;
+    --bg-gradient: linear-gradient(135deg, #00feba, #5b548a);
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--bg-gradient);
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    width: 400px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: var(--glass-shadow);
+    transition: height 0.6s ease;
+    overflow: hidden;
+}
+
+.search-box {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+
+.search-box i {
+    color: var(--primary-color);
+    font-size: 20px;
+}
+
+.search-box input {
+    width: 80%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    color: var(--primary-color);
+    font-weight: 500;
+    padding: 0 10px;
+}
+
+.search-box input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.search-box button {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border: none;
+    color: var(--primary-color);
+    transition: 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-box button:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.weather-box {
+    text-align: center;
+    display: none;
+    /* Hidden by default */
+    flex-direction: column;
+    align-items: center;
+    color: var(--primary-color);
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.box-header .location {
+    font-size: 24px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.weather-info {
+    margin-bottom: 20px;
+}
+
+.weather-icon {
+    width: 100px;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+.temp-box {
+    position: relative;
+    display: inline-block;
+}
+
+.temperature {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.unit {
+    font-size: 24px;
+    position: absolute;
+    top: 10px;
+    right: -20px;
+}
+
+.description {
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin-top: 10px;
+}
+
+.weather-details {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.detail {
+    display: flex;
+    align-items: center;
+    width: 45%;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    justify-content: space-evenly;
+}
+
+.detail i {
+    font-size: 26px;
+    color: var(--primary-color);
+}
+
+.detail .text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: var(--primary-color);
+}
+
+.detail .text span {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.detail .text p {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.not-found {
+    width: 100%;
+    text-align: center;
+    display: none;
+    color: var(--primary-color);
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.not-found .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.not-found i {
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+.not-found p {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.loader {
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top: 5px solid var(--primary-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+    display: none;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
